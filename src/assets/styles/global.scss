@@ -1,5 +1,47 @@
+$primaryColor: #924FE0;
+$surfaceColor: rgba(#FFFFFF, 0.5);
+$inkColor: #1B2750;
+$lightInkColor: rgba(#1B2750, 0.8);
+$backgroundColor: #F3EEF8;
+$dividerColor: rgba(#000000, 0.12);
+
+$defaultRadius: 44px;
+
 @import "./reset";
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Rubik:wght@700&display=swap);
+
+@mixin inherit-size() {
+  width: inherit;
+  height: inherit;
+}
+
+@mixin not-selectable() {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+@mixin antialias() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
+}
+
+@mixin tiny-transition() {
+  transition: all 100ms ease;
+}
+
+@mixin default-transition() {
+  transition: all 300ms ease;
+}
+
+@mixin extended-transition() {
+  transition: all 600ms ease;
+}
 
 body,
 html {
@@ -7,5 +49,44 @@ html {
 }
 
 body {
-  background-color: #EEE;
+  background-color: $backgroundColor;
 }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+ul,
+a,
+span {
+  @include antialias();
+}
+
+i {
+  @include not-selectable();
+  @include antialias();
+}
+
+p, a, input, textarea {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: $lightInkColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $inkColor;
+}
+
+h1 { font-size: 96px }
+h2 { font-size: 64px }
+h3 { font-size: 48px }

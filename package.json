@@ -1,28 +1,32 @@
 {
-  "name": "projectname",
+  "name": "hippocamus-website",
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@webpack-cli/init": "^1.0.3",
+    "@webpack-cli/init": "^1.1.3",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "css-loader": "^5.0.1",
-    "filemanager-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^4.5.0",
-    "mini-css-extract-plugin": "^1.3.3",
+    "css-loader": "^5.1.1",
+    "filemanager-webpack-plugin": "^3.1.0",
+    "html-webpack-plugin": "^5.2.0",
+    "mini-css-extract-plugin": "^1.3.9",
     "node-sass": "^5.0.0",
-    "sass": "^1.26.10",
-    "sass-loader": "^10.1.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.0.3",
-    "ts-loader": "^8.0.12",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-loader": "^8.0.17",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
-    "typescript": "^4.1.3",
-    "typescript-plugin-css-modules": "^3.0.1",
-    "webpack": "^5.10.1",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "typescript": "^4.2.2",
+    "typescript-plugin-css-modules": "^3.2.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@boulevard/vampire": "^1.0.0-beta.2",
+    "firebase": "^8.2.9",
+    "lit-element": "^2.4.0"
+  },
   "scripts": {
     "build": "webpack",
     "start:dev": "webpack serve --hot"

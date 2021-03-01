@@ -13,6 +13,9 @@
       ],
       "~s/*": [
         "./src/assets/styles/*"
+      ],
+      "~c/*": [
+        "./src/components/*"
       ]
     },
     "strict": true,

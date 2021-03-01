@@ -1,0 +1,9 @@
+@use "../../assets/styles/global";
+
+:global c-header {
+  display: block;
+
+  .header-subtext {
+    color: global.$lightInkColor;
+  }
+}

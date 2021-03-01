@@ -22,7 +22,7 @@ module.exports = {
 	// Create an entry for each html page
 	// Entry name will be the path part of url
 	entry: {
-		test: './src/pages/test/script.ts'
+		cv: './src/pages/cv/script.ts'
 	},
 
 	output: {

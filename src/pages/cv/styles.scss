@@ -1,0 +1,13 @@
+@use "../../assets/styles/global";
+
+$sideMargin: 160px;
+
+.container {
+  margin-left: $sideMargin;
+  margin-right: $sideMargin;
+}
+
+.top-bar {
+  width: 100%;
+  height: $sideMargin;
+}
