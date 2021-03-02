@@ -10,4 +10,13 @@ $sideMargin: 160px;
 .top-bar {
   width: 100%;
   height: $sideMargin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .special-for-label {
+    font-weight: bold;
+  }
 }

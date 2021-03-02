@@ -3,12 +3,13 @@ $surfaceColor: rgba(#FFFFFF, 0.5);
 $inkColor: #1B2750;
 $lightInkColor: rgba(#1B2750, 0.8);
 $backgroundColor: #F3EEF8;
+$onPrimaryColor: rgba(#FFFFFF, 0.8);
 $dividerColor: rgba(#000000, 0.12);
 
 $defaultRadius: 44px;
 
 @import "./reset";
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons+Round);
 @import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Rubik:wght@700&display=swap);
 
 @mixin inherit-size() {
@@ -52,18 +53,7 @@ body {
   background-color: $backgroundColor;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-textarea,
-ul,
-a,
-span {
+p, h1, h2, h3, h4, h5, h6, input, textarea, ul, a, span {
   @include antialias();
 }
 
@@ -72,7 +62,7 @@ i {
   @include antialias();
 }
 
-p, a, input, textarea {
+p, a, input, textarea, span {
   font-family: 'Exo 2', sans-serif;
   font-weight: normal;
   font-size: 18px;

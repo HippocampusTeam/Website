@@ -1,0 +1,49 @@
+@use "../../assets/styles/global";
+
+:global c-button {
+  display: block;
+
+  .button-wrapper {
+    width: fit-content;
+    height: 52px;
+
+    background-color: global.$primaryColor;
+    border-radius: 26px;
+
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.36);
+
+    padding: 16px 20px 16px 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    cursor: pointer;
+
+    .button-icon {
+      margin-right: 12px;
+      color: global.$onPrimaryColor;
+    }
+
+    .button-text {
+      transform: translateY(-1px);
+      text-align: left;
+      vertical-align: middle;
+      font-weight: bold;
+      color: global.$onPrimaryColor;
+    }
+
+    &.button-secondary {
+      background-color: global.$surfaceColor;
+
+      .button-icon {
+        color: global.$lightInkColor;
+      }
+
+      .button-text {
+        color: global.$lightInkColor;
+      }
+    }
+  }
+}
