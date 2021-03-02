@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@boulevard/vampire": "^1.0.0-beta.2",
-    "firebase": "^8.2.9",
     "lit-element": "^2.4.0"
   },
   "scripts": {
