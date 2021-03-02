@@ -1,0 +1,49 @@
+@use "../../assets/styles/global";
+
+:global c-card {
+  display: block;
+
+  .card-wrapper {
+    width: 600px;
+    min-height: 348px;
+
+    background-color: global.$surfaceColor;
+    border-radius: global.$defaultRadius;
+
+    @include global.default-shadow();
+
+    padding: 0 40px 40px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    & > * {
+      width: 100%;
+    }
+
+    .card-title {
+      text-align: left;
+
+      margin-top: 30px;
+    }
+
+    .card-text {
+      text-align: left;
+
+      margin-top: 18px;
+    }
+
+    .card-buttons-wrapper {
+      margin-top: auto;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .card-button {
+        margin-right: 16px;
+      }
+    }
+  }
+}
