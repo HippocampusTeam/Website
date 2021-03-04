@@ -11,7 +11,8 @@ export class ButtonElement extends LightCustomElement implements Button {
 
 	render() { return html`
 		${this.link ? html`
-			<a class="button-wrapper ${this.secondary ? `button-secondary` : ``}" href="${this.link}">
+			<a class="button-wrapper ${this.secondary ? `button-secondary` : ``}" href="${this.link}"
+			   target="_blank">
 				${this.icon ? html`<span class="button-icon material-icons-round">${this.icon}</span>` : html``}
 				<span class="button-text">${this.text}</span>
 			</a>
