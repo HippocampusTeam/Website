@@ -22,11 +22,12 @@
     cursor: pointer;
 
     .button-icon {
-      margin-right: 12px;
+      margin-right: 4px;
       color: global.$onPrimaryColor;
     }
 
     .button-text {
+      margin-left: 6px;
       transform: translateY(-1px);
       text-align: left;
       vertical-align: middle;

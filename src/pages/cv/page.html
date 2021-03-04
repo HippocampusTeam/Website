@@ -11,8 +11,8 @@
 
 <body>
 
-<div class="container">
-	<div class="top-bar">
+<div class="app-container">
+	<div class="top-bar in-grid">
 		<p class="special-for-label">Для Яндекс Школы</p>
 
 		<c-button class="pdf-button" secondary="true"
@@ -20,10 +20,12 @@
 				  icon="contact_page"></c-button>
 	</div>
 
-	<div class="hello-section section">
+	<div class="hello-section section in-grid">
 		<c-header class="name-header"
 				  text="Имя Фамилия"
 				  subtext="Портфолио"></c-header>
+
+		<p class="bio-text">Провожу тонну времени полностью погружённым либо в проекты, либо в сериалы. Сочетаю в себе искромётно-несмешной юмор, лидерские качества, ужасающий цинизм, не менее ужасающе огромное дружелюбие, невообразимую любовь к UI/UX дизайну, к элегантным алгоритмам и к решению нерешаемых задач.</p>
 
 		<c-button class="move-hello-button"
 				  text="Супер! Какие проекты?"
@@ -31,22 +33,39 @@
 	</div>
 
 	<div class="cards-section section">
-		<c-header class="projects-header" secondary="true"
+		<c-header class="projects-header in-grid" secondary="true"
 				  text="Проекты"
 				  subtext="Сейчас покажу..."></c-header>
 
-		<c-card title="Etiam" text="Web-сервис, реализующий онлайн презентации в новом интересном формате. Сейчас находится в очень активной разработке. Этот проект направлен на использования в обучающем процессе, хотя естественно его применение не ограничено только этой сферой."
-				buttons='[{"text":"Перейти на Etiam","link":"https://etiam.live"}]'></c-card>
+		<c-cards-list class="projects-cards-list"></c-cards-list>
 
-		<c-header class="education-header" secondary="true"
+		<c-header class="education-header in-grid" secondary="true"
 				  text="Образование"
 				  subtext="Далее"></c-header>
+
+		<c-cards-list class="education-cards-list"></c-cards-list>
 	</div>
 
-	<div class="contacts-section section">
+	<div class="contacts-section section in-grid">
 		<c-header class=contacts-header" secondary="true"
 				  text="Контакты"
 				  subtext="И наконец"></c-header>
+
+		<div class="contact-record">
+			<c-button class="contact-telegram-button"
+					  text="Написать в Telegram"
+					  icon="send"></c-button>
+
+			<p class="contact-text">@not_hello_world</p>
+		</div>
+
+		<div class="contact-record">
+			<c-button class="contact-email-button"
+					  text="Написать на почту"
+					  icon="mail"></c-button>
+
+			<p class="contact-text">levada.an@yandex.ru</p>
+		</div>
 	</div>
 </div>
 

@@ -2,9 +2,14 @@
 
 $sideMargin: 160px;
 
-.container {
-  margin-left: $sideMargin;
-  margin-right: $sideMargin;
+.app-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.in-grid {
+  padding-left: $sideMargin;
+  padding-right: $sideMargin;
 }
 
 .top-bar {
@@ -18,5 +23,13 @@ $sideMargin: 160px;
 
   .special-for-label {
     font-weight: bold;
+  }
+}
+
+.hello-section {
+  .bio-text {
+    width: 50%;
+    font-size: 24px;
+    font-weight: 600;
   }
 }

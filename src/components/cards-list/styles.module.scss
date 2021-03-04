@@ -1,0 +1,83 @@
+@use "../../assets/styles/global";
+
+:global c-cards-list {
+  display: block;
+  position: relative;
+
+  .cards-list-wrapper {
+    width: 100%;
+
+    .cards-list {
+      width: 100%;
+
+      margin: 64px 0 64px 0;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      overflow: scroll hidden;
+      scroll-snap-type: x;
+      scroll-padding-left: 160px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & > * {
+        scroll-snap-align: start;
+      }
+
+      & > *:first-child {
+        margin-left: 160px;
+      }
+
+      & > *:last-child {
+        border-right: 160px solid transparent;
+      }
+
+      & > *:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  .scroll-button {
+    width: 160px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    &:hover:not(.disabled) {
+      opacity: 1;
+    }
+
+    &.scroll-button-left {
+      left: 0;
+    }
+
+    &.scroll-button-right {
+      right: 0;
+    }
+
+    &.disabled {
+      opacity: 0;
+      cursor: default;
+    }
+
+    span {
+      font-size: 96px;
+      opacity: 0;
+    }
+  }
+}

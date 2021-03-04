@@ -1,6 +1,7 @@
 import { html, property, customElement } from 'lit-element';
 import { CustomElement, LightCustomElement } from "../base";
 import styles from "./styles.module.scss";
+import "~c/button"
 
 @customElement("c-card")
 export class CardElement extends LightCustomElement implements Card {
@@ -30,7 +31,9 @@ export class CardElement extends LightCustomElement implements Card {
 	}
 }
 
-export interface Card extends CustomElement {
+export interface Card extends CustomElement, CardPayload { }
+
+export interface CardPayload {
 	title : string;
 	text : string;
 	buttons : CardButton[];

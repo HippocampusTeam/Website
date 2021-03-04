@@ -61,9 +61,8 @@ p, h1, h2, h3, h4, h5, h6, input, textarea, ul, a, span {
   @include antialias();
 }
 
-i {
+.material-icons-round {
   @include not-selectable();
-  @include antialias();
 }
 
 p, a, input, textarea, span {
