@@ -28,6 +28,11 @@ if (urlRegex) {
         fetchContent(urlName);
 }
 
+document.querySelector(".move-hello-button")!.addEventListener("click", () => {
+    const scroller = document.querySelector("html") as HTMLElement;
+    scroller.scrollTo({ left: 0, top: window.innerHeight - 120, behavior: 'smooth' });
+});
+
 function fetchContent(urlName : string) {
     fetch(`${baseUrl}/${urlName}/person.json`)
         .then((response) => response.json())

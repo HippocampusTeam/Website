@@ -55,7 +55,7 @@ export class CardsListElement extends LightCustomElement implements CardsList {
 	moveScrollBy(n : number) : void {
 		const delta : number = this.cardWidth * n;
 		this.updateScrollButtons(this.listElement.scrollLeft + delta);
-		this.listElement.scrollBy({left: delta, top: 0, behavior: 'smooth'});
+		this.listElement.scrollBy({ left: delta, top: 0, behavior: 'smooth' });
 	}
 
 	updateScrollButtons(scrollPos : number) {
