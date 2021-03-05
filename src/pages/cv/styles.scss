@@ -12,6 +12,22 @@ $sideMargin: 160px;
   padding-right: $sideMargin;
 }
 
+.wrong-name-banner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+
+  background-color: global.$backgroundColor;
+  display: none;
+
+  &.shown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .hello-section {
   height: 100vh;
 

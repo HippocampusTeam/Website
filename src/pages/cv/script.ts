@@ -24,9 +24,9 @@ const contactEmailText = document.querySelector(".contact-email-text") as HTMLEl
 const urlRegex : RegExpMatchArray | null = window.location.search.match(/\?p=(.+)/);
 if (urlRegex) {
     const urlName = urlRegex ? urlRegex[1] : "";
-    if (urlName.length > 0)
-        fetchContent(urlName);
-}
+    if (urlName.length > 0) fetchContent(urlName);
+    else showWrongBanner();
+} else showWrongBanner();
 
 document.querySelector(".move-hello-button")!.addEventListener("click", () => {
     const scroller = document.querySelector("html") as HTMLElement;
@@ -43,19 +43,29 @@ function fetchContent(urlName : string) {
             contactTelegramText.textContent = `@${data.contacts.telegram}`;
             contactEmailButton.link = `mailto:${data.contacts.email}`;
             contactEmailText.textContent = `${data.contacts.email}`;
-        });
+        }).catch(() => {
+            showWrongBanner()
+    });
 
     fetch(`${baseUrl}/${urlName}/projects.json`)
         .then((response) => response.json())
         .then((data : ProjectsData) => {
             projectsCardsList.cards = data.cards;
-        });
+        }).catch(() => {
+        showWrongBanner()
+    });
 
     fetch(`${baseUrl}/${urlName}/education.json`)
         .then((response) => response.json())
         .then((data : EducationData) => {
             educationCardsList.cards = data.cards;
-        });
+        }).catch(() => {
+        showWrongBanner()
+    });
+}
+
+function showWrongBanner() {
+    document.querySelector(".wrong-name-banner")!.classList.add("shown")
 }
 
 interface PersonData {
