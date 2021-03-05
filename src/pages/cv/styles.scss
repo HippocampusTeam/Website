@@ -12,24 +12,70 @@ $sideMargin: 160px;
   padding-right: $sideMargin;
 }
 
-.top-bar {
-  width: 100%;
-  height: $sideMargin;
+.hello-section {
+  height: 100vh;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 
-  .special-for-label {
-    font-weight: bold;
+  padding-bottom: $sideMargin;
+
+  .top-bar {
+    width: 100%;
+    height: $sideMargin;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .special-for-label {
+      font-weight: bold;
+      color: rgba(global.$inkColor, 0.6);
+    }
+  }
+
+  .bio-text {
+    width: 55%;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 140%;
   }
 }
 
-.hello-section {
-  .bio-text {
-    width: 50%;
-    font-size: 24px;
-    font-weight: 600;
+.cards-section {
+  .projects-header {
+    margin-top: 4px;
   }
+}
+
+.contacts-section {
+  .contacts-header {
+    margin-bottom: 64px;
+  }
+
+  .contact-record {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:not(&:last-child) {
+      margin-bottom: 32px;
+    }
+
+    & > *:first-child {
+      margin-right: 24px;
+    }
+
+    & > p {
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
+}
+
+.footer-section {
+  width: 100%;
+  height: $sideMargin;
 }
