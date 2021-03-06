@@ -16,16 +16,16 @@ export class CardsListElement extends LightCustomElement implements CardsList {
 
 	render() { return html`
 		<div class="cards-list-wrapper">
-			<div class="scroll-button scroll-button-left">
-				<span class="material-icons-round">keyboard_arrow_left</span>
-			</div>
-			
 			<div class="cards-list">
 				${this.cards.map(card => html`
 					<c-card title="${card.title}"
 							text="${card.text}"
 							.buttons="${card.buttons}"></c-card>
 				`)}
+			</div>
+
+			<div class="scroll-button scroll-button-left">
+				<span class="material-icons-round">keyboard_arrow_left</span>
 			</div>
 
 			<div class="scroll-button scroll-button-right">
@@ -55,7 +55,15 @@ export class CardsListElement extends LightCustomElement implements CardsList {
 	moveScrollBy(n : number) : void {
 		const delta : number = this.cardWidth * n;
 		this.updateScrollButtons(this.listElement.scrollLeft + delta);
-		this.listElement.scrollBy({ left: delta, top: 0, behavior: 'smooth' });
+
+		for (const item of this.listElement.children)
+			item.classList.add("card--moving");
+		setTimeout(() => this.listElement.scrollBy({ left: delta, top: 0, behavior: 'smooth' }), 100)
+		setTimeout(() => {
+			for (const item of this.listElement.children)
+				item.classList.remove("card--moving");
+		}, 400 + 100)
+
 	}
 
 	updateScrollButtons(scrollPos : number) {

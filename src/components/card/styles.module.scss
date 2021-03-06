@@ -3,20 +3,31 @@
 :global c-card {
   display: block;
 
+  // Possible effect here
+  //&.card--moving .card-wrapper {
+  //  transform: translateY(-2px) !important;
+  //  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1) !important;
+  //}
+
   .card-wrapper {
     width: 600px;
     min-height: 348px;
 
+    @include global.default-transition();
     background-color: global.$surfaceColor;
     border-radius: global.$defaultRadius;
-
-    @include global.default-shadow();
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     padding: 0 40px 40px 40px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
 
     & > * {
       width: 100%;

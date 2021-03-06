@@ -10,13 +10,13 @@
     .cards-list {
       width: 100%;
 
-      margin: 64px 0 64px 0;
+      padding: 64px 0 64px 0;
 
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
 
-      overflow: scroll hidden;
+      overflow: scroll visible;
       scroll-snap-type: x;
       scroll-padding-left: 160px;
 

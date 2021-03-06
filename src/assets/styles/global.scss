@@ -1,7 +1,8 @@
 $primaryColor: #924FE0;
+$lightPrimaryColor: rgba($primaryColor, 0.8);
 $surfaceColor: rgba(#FFFFFF, 0.5);
 $inkColor: #1B2750;
-$lightInkColor: rgba(#1B2750, 0.8);
+$lightInkColor: rgba($inkColor, 0.8);
 $backgroundColor: #F3EEF8;
 $onPrimaryColor: rgba(#FFFFFF, 0.8);
 $dividerColor: rgba(#000000, 0.12);
@@ -42,10 +43,6 @@ $defaultRadius: 44px;
 
 @mixin extended-transition() {
   transition: all 600ms ease;
-}
-
-@mixin default-shadow() {
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.36);
 }
 
 body,
