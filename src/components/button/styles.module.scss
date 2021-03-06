@@ -7,7 +7,7 @@
     width: fit-content;
     height: 52px;
 
-    @include global.default-transition();
+    @include global.transition(transform 200ms ease, box-shadow 200ms ease);
     background-color: global.$primaryColor;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 26px;

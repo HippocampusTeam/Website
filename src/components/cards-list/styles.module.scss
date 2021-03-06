@@ -12,6 +12,10 @@
 
       padding: 64px 0 64px 0;
 
+      @include global.transition(opacity 600ms ease-out, transform 600ms ease-out);
+      opacity: 0;
+      transform: translateX(80px);
+
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -19,6 +23,11 @@
       overflow: scroll visible;
       scroll-snap-type: x;
       scroll-padding-left: 160px;
+
+      &.screen--entered {
+        opacity: 1;
+        transform: translateX(0px);
+      }
 
       &::-webkit-scrollbar {
         display: none;

@@ -45,6 +45,13 @@ export class CardsListElement extends LightCustomElement implements CardsList {
 		this.rightScrollButton.addEventListener("click", () => { this.moveScrollBy(1) });
 		this.leftScrollButton.classList.add("disabled");
 
+		let observer = new IntersectionObserver((entries) => this.playEntranceAnimation(entries), {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.2
+		});
+		observer.observe(this);
+
 		// TODO: Come up with a better solution
 		setTimeout(() => {
 			(this.leftScrollButton.querySelector("span") as HTMLElement).style.opacity = "1";
@@ -73,6 +80,11 @@ export class CardsListElement extends LightCustomElement implements CardsList {
 
 		if (scrollPos >= this.listElement.scrollWidth - this.listElement.clientWidth) this.rightScrollButton.classList.add("disabled");
 		else this.rightScrollButton.classList.remove("disabled");
+	}
+
+	playEntranceAnimation(entries : IntersectionObserverEntry[]) {
+		const e = entries[0]
+		if (e.isIntersecting) this.listElement.classList.add("screen--entered");
 	}
 }
 

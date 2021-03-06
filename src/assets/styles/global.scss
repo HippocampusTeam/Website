@@ -33,16 +33,11 @@ $defaultRadius: 44px;
   text-rendering: optimizeLegibility;
 }
 
-@mixin tiny-transition() {
-  transition: all 100ms ease;
-}
-
-@mixin default-transition() {
-  transition: all 300ms ease;
-}
-
-@mixin extended-transition() {
-  transition: all 600ms ease;
+@mixin transition($prop...) {
+  -webkit-transition: $prop;
+  -moz-transition: $prop;
+  -o-transition: $prop;
+  transition: $prop;
 }
 
 body,

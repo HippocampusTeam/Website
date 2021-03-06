@@ -13,7 +13,7 @@
     width: 600px;
     min-height: 348px;
 
-    @include global.default-transition();
+    @include global.transition(transform 300ms ease, box-shadow 300ms ease);
     background-color: global.$surfaceColor;
     border-radius: global.$defaultRadius;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
