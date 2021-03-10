@@ -27,7 +27,8 @@ module.exports = {
 
 	output: {
 		filename: "[name]/script.js",
-		path: `${paths.dist}`
+		path: `${paths.dist}`,
+		assetModuleFilename: 'assets/[hash][ext][query]'
 	},
 
 	plugins: [
@@ -42,7 +43,7 @@ module.exports = {
 			events: {
 				onEnd: {
 					copy: [
-						{ source: `${paths.src}/assets/img`, destination: `${paths.dist}/static/img` },
+						// { source: `${paths.src}/assets/img`, destination: `${paths.dist}/static/img` },
 						{ source: `${paths.src}/assets/to-root`, destination: `${paths.dist}/` }
 					]
 				},
@@ -72,6 +73,9 @@ module.exports = {
 					sourceMap: true
 				}
 			}]
+		}, {
+			test: /\.(ttf|eot|svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			type: 'asset/inline'
 		}]
 	},
 

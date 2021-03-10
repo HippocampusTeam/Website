@@ -2,9 +2,31 @@
 
 $sideMargin: 160px;
 
+//html, body {
+//  overflow-x: hidden;
+//}
+
 .app-container {
+  position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+.app-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  background: no-repeat top/cover url("../../assets/img/bg.png");
+
+  -webkit-filter: blur(180px);
+  -moz-filter: blur(180px);
+  -o-filter: blur(180px);
+  -ms-filter: blur(180px);
+  filter: blur(180px);
 }
 
 .in-grid {
@@ -30,6 +52,8 @@ $sideMargin: 160px;
 
 .hello-section {
   height: 100vh;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -57,6 +81,16 @@ $sideMargin: 160px;
     font-size: 24px;
     font-weight: 600;
     line-height: 140%;
+  }
+
+  .art {
+    position: absolute;
+    right: 0;
+    top: 14%;
+    bottom: 8%;
+    left: 55%;
+    z-index: 1;
+    background: url("../../assets/img/andrew.png") center/contain no-repeat;
   }
 }
 

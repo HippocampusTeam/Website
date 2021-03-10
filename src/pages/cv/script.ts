@@ -33,7 +33,16 @@ document.querySelector(".move-hello-button")!.addEventListener("click", () => {
     scroller.scrollTo({ left: 0, top: window.innerHeight - 120, behavior: 'smooth' });
 });
 
-function fetchContent(urlName : string) {
+// const parallaxElements = [...document.querySelectorAll('.parallax--effect')] as HTMLElement[];
+// window.addEventListener('mousemove', function(e) {
+//     const x = e.clientX / window.innerWidth - 0.5;
+//     const y = e.clientY / window.innerHeight - 0.5;
+//
+//     for (const item of parallaxElements)
+//         item.style.transform = getParallaxTranslate(x, y, +(item.dataset.pm as string))
+// });
+
+function fetchContent(urlName : string) : void {
     fetch(`${baseUrl}/${urlName}/person.json`)
         .then((response) => response.json())
         .then((data : PersonData) => {
@@ -64,8 +73,12 @@ function fetchContent(urlName : string) {
     });
 }
 
-function showWrongBanner() {
+function showWrongBanner() : void {
     document.querySelector(".wrong-name-banner")!.classList.add("shown")
+}
+
+function getParallaxTranslate(x : number, y : number, m : number) : string {
+    return `translate(${x * m}px, ${y * m}px)`
 }
 
 interface PersonData {
