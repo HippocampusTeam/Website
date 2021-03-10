@@ -85,12 +85,23 @@ $sideMargin: 160px;
 
   .art {
     position: absolute;
-    right: 0;
-    top: 14%;
-    bottom: 8%;
-    left: 55%;
     z-index: 1;
-    background: url("../../assets/img/andrew.png") center/contain no-repeat;
+
+    &.art-andrew {
+      background: url("../../assets/img/andrew.png") center/contain no-repeat;
+      right: 0;
+      top: 14%;
+      bottom: 8%;
+      left: 55%;
+    }
+
+    &.art-sonya {
+      background: url("../../assets/img/sonya.png") center/contain no-repeat;
+      right: 0;
+      top: 14%;
+      bottom: 0;
+      left: 60%;
+    }
   }
 }
 

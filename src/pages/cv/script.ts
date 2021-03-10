@@ -12,6 +12,7 @@ import { CardPayload } from "~c/card";
 
 const baseUrl = "https://raw.githubusercontent.com/HippocampusTeam/WebsiteContent/master";
 
+const namedArt = document.querySelector(".hello-section .art") as HTMLElement;
 const nameHeader = document.querySelector(".name-header") as Header;
 const bioText = document.querySelector(".bio-text") as HTMLElement;
 const projectsCardsList = document.querySelector(".projects-cards-list") as CardsList;
@@ -21,12 +22,14 @@ const contactTelegramText = document.querySelector(".contact-telegram-text") as 
 const contactEmailButton = document.querySelector(".contact-email-button") as Button;
 const contactEmailText = document.querySelector(".contact-email-text") as HTMLElement;
 const contactGithubButton = document.querySelector(".contact-github-button") as Button;
-const contactGithubText = document.querySelector(".contact-github-text") as HTMLElement;
 
 const urlRegex : RegExpMatchArray | null = window.location.search.match(/\?p=(.+)/);
 if (urlRegex) {
     const urlName = urlRegex ? urlRegex[1] : "";
-    if (urlName.length > 0) fetchContent(urlName);
+    if (urlName.length > 0) {
+        namedArt.classList.add(`art-${urlName}`);
+        fetchContent(urlName);
+    }
     else showWrongBanner();
 } else showWrongBanner();
 
@@ -55,7 +58,6 @@ function fetchContent(urlName : string) : void {
             contactEmailButton.link = `mailto:${data.contacts.email}`;
             contactEmailText.textContent = `${data.contacts.email}`;
             contactGithubButton.link = `https://github.com/${data.contacts.github}`;
-            contactGithubText.textContent = `https://github.com/${data.contacts.github}`;
         }).catch(() => {
             showWrongBanner()
     });
