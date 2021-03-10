@@ -2,10 +2,6 @@
 
 $sideMargin: 160px;
 
-//html, body {
-//  overflow-x: hidden;
-//}
-
 .app-container {
   position: relative;
   width: 100%;
@@ -27,6 +23,10 @@ $sideMargin: 160px;
   -o-filter: blur(180px);
   -ms-filter: blur(180px);
   filter: blur(180px);
+}
+
+.art {
+  pointer-events: none;
 }
 
 .in-grid {
@@ -95,12 +95,31 @@ $sideMargin: 160px;
 }
 
 .cards-section {
+  position: relative;
+
   .projects-header {
     margin-top: 4px;
+  }
+
+  c-cards-list {
+    margin-bottom: 56px;
+  }
+
+  .art {
+    position: absolute;
+    right: -60px;
+    top: 540px;
+    height: 320px;
+    left: 60%;
+    z-index: 1;
+    background: url("../../assets/img/lamp.png") right center / contain no-repeat;
   }
 }
 
 .contacts-section {
+  position: relative;
+  padding-bottom: $sideMargin;
+
   .contacts-header {
     margin-bottom: 64px;
   }
@@ -123,9 +142,25 @@ $sideMargin: 160px;
       font-size: 24px;
     }
   }
-}
 
-.footer-section {
-  width: 100%;
-  height: $sideMargin;
+  .art {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: -100px;
+    z-index: 1;
+
+    &.art-0 {
+      background: url("../../assets/img/planet.png") right bottom / contain no-repeat;
+    }
+
+    &.art-1 {
+      background: url("../../assets/img/planet-1.png") right bottom / contain no-repeat;
+    }
+
+    &.art-2 {
+      background: url("../../assets/img/planet-2.png") right bottom / contain no-repeat;
+    }
+  }
 }
