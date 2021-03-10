@@ -20,6 +20,8 @@ const contactTelegramButton = document.querySelector(".contact-telegram-button")
 const contactTelegramText = document.querySelector(".contact-telegram-text") as HTMLElement;
 const contactEmailButton = document.querySelector(".contact-email-button") as Button;
 const contactEmailText = document.querySelector(".contact-email-text") as HTMLElement;
+const contactGithubButton = document.querySelector(".contact-github-button") as Button;
+const contactGithubText = document.querySelector(".contact-github-text") as HTMLElement;
 
 const urlRegex : RegExpMatchArray | null = window.location.search.match(/\?p=(.+)/);
 if (urlRegex) {
@@ -52,6 +54,8 @@ function fetchContent(urlName : string) : void {
             contactTelegramText.textContent = `@${data.contacts.telegram}`;
             contactEmailButton.link = `mailto:${data.contacts.email}`;
             contactEmailText.textContent = `${data.contacts.email}`;
+            contactGithubButton.link = `https://github.com/${data.contacts.github}`;
+            contactGithubText.textContent = `https://github.com/${data.contacts.github}`;
         }).catch(() => {
             showWrongBanner()
     });
@@ -85,8 +89,9 @@ interface PersonData {
     name: string;
     bio: string;
     contacts: {
-        telegram: string,
-        email: string
+        telegram: string;
+        email: string;
+        github: string
     }
 }
 
