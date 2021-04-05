@@ -22,12 +22,14 @@ const contactTelegramText = document.querySelector(".contact-telegram-text") as 
 const contactEmailButton = document.querySelector(".contact-email-button") as Button;
 const contactEmailText = document.querySelector(".contact-email-text") as HTMLElement;
 const contactGithubButton = document.querySelector(".contact-github-button") as Button;
+const pdfButton = document.querySelector(".pdf-button") as Button;
 
 const urlRegex : RegExpMatchArray | null = window.location.search.match(/\?p=(.+)/);
 if (urlRegex) {
     const urlName = urlRegex ? urlRegex[1] : "";
     if (urlName.length > 0) {
         namedArt.classList.add(`art-${urlName}`);
+        pdfButton.link = `${baseUrl}/${urlName}/cv.pdf`
         fetchContent(urlName);
     }
     else showWrongBanner();
@@ -37,15 +39,6 @@ document.querySelector(".move-hello-button")!.addEventListener("click", () => {
     const scroller = document.querySelector("html") as HTMLElement;
     scroller.scrollTo({ left: 0, top: window.innerHeight - 120, behavior: 'smooth' });
 });
-
-// const parallaxElements = [...document.querySelectorAll('.parallax--effect')] as HTMLElement[];
-// window.addEventListener('mousemove', function(e) {
-//     const x = e.clientX / window.innerWidth - 0.5;
-//     const y = e.clientY / window.innerHeight - 0.5;
-//
-//     for (const item of parallaxElements)
-//         item.style.transform = getParallaxTranslate(x, y, +(item.dataset.pm as string))
-// });
 
 function fetchContent(urlName : string) : void {
     fetch(`${baseUrl}/${urlName}/person.json`)
