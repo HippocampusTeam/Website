@@ -40,6 +40,12 @@ $defaultRadius: 44px;
   transition: $prop;
 }
 
+@mixin font-adapt-size($base, $min, $max) {
+  $size: calc(#{$base});
+  $size: min(max(#{$min}, #{$size}), #{$max});
+  font-size: $size;
+}
+
 body,
 html {
   height: 100%;
@@ -57,6 +63,10 @@ p, h1, h2, h3, h4, h5, h6, input, textarea, ul, a, span {
   @include not-selectable();
 }
 
+body {
+  font-size: 0.98vw;
+}
+
 p, a, input, textarea, span {
   font-family: 'Exo 2', sans-serif;
   font-weight: normal;
@@ -72,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $inkColor;
 }
 
-h1 { font-size: 96px }
-h2 { font-size: 64px }
-h3 { font-size: 48px }
-h4 { font-size: 36px }
+h1 { @include font-adapt-size(600%, 64px, 96px) }
+h2 { @include font-adapt-size(400%, 48px, 64px) }
+h3 { @include font-adapt-size(300%, 36px, 48px) }
+h4 { @include font-adapt-size(200%, 24px, 36px) }

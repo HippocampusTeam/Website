@@ -61,6 +61,10 @@ $sideMargin: 160px;
 
   padding-bottom: $sideMargin;
 
+  @media all and (max-height: 800px) {
+    padding-bottom: $sideMargin * 0.5;
+  }
+
   .top-bar {
     width: 100%;
     height: $sideMargin;
@@ -69,6 +73,10 @@ $sideMargin: 160px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media all and (max-height: 800px) {
+      height: $sideMargin * 0.8;
+    }
 
     .special-for-label {
       font-weight: bold;
@@ -81,6 +89,10 @@ $sideMargin: 160px;
     font-size: 24px;
     font-weight: 600;
     line-height: 140%;
+
+    @media all and (max-width: 1120px) {
+      width: 100%;
+    }
   }
 
   .art {
@@ -102,6 +114,10 @@ $sideMargin: 160px;
       bottom: 0;
       left: 60%;
     }
+
+    @media all and (max-width: 1120px) {
+      display: none;
+    }
   }
 }
 
@@ -119,7 +135,7 @@ $sideMargin: 160px;
   .art {
     position: absolute;
     right: -60px;
-    top: 540px;
+    top: 40%;
     height: 320px;
     left: 60%;
     z-index: 1;
@@ -164,14 +180,26 @@ $sideMargin: 160px;
 
     &.art-0 {
       background: url("../../assets/img/planet.png") right bottom / contain no-repeat;
+
+      @media all and (max-width: 1180px) {
+        display: none;
+      }
     }
 
     &.art-1 {
       background: url("../../assets/img/planet-1.png") right bottom / contain no-repeat;
+
+      @media all and (max-width: 1390px) {
+        display: none;
+      }
     }
 
     &.art-2 {
       background: url("../../assets/img/planet-2.png") right bottom / contain no-repeat;
+
+      @media all and (max-width: 1500px) {
+        display: none;
+      }
     }
   }
 }
