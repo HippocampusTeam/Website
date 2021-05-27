@@ -17,7 +17,7 @@ const paths = {
 const pages = fs.readdirSync(paths.pages);
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 
 	// Create an entry for each html page
 	// Entry name will be the path part of url
@@ -61,11 +61,15 @@ module.exports = {
 			test: /.(scss|css)$/,
 
 			use: [{
-				loader: MiniCssExtractPlugin.loader
+				loader: MiniCssExtractPlugin.loader,
+				options: {
+					esModule: false,
+				}
 			}, {
 				loader: "css-loader",
 				options: {
-					sourceMap: true
+					sourceMap: true,
+					modules: "global"
 				}
 				}, {
 				loader: "sass-loader",
@@ -75,7 +79,7 @@ module.exports = {
 			}]
 		}, {
 			test: /\.(ttf|eot|svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-			type: 'asset/inline'
+			type: 'asset/resource'
 		}]
 	},
 
